@@ -1,0 +1,62 @@
+# CLion-specific
+.idea/
+*.iml
+
+# CMake-specific
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+.cmake
+cmake-build-/
+build/
+
+#C++ compilation
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.app
+*.obj
+*.pdb
+*.ilk
+
+# macOS-specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.apdisk
+
+# Common IDE and editor files
+*.swp
+*~
+*.bak
+*.tmp
+
+# Project-specific (optional, adjust as needed)
+bin/
+lib/
+out/
+*.log
+*.tgz
+*.zip
+*.tar.gz
+
+# Sensitive files
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+config.yaml
+config.json
+#endif
