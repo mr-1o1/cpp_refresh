@@ -79,8 +79,44 @@ void HowArraysAndPointersWork() {
     TakingInput(tempArray, tempArrayCapacity, tempSize);
 }
 
+void LoadingInput(string name, int A[], int Capacity, int &Size) {
+    ifstream Rdr(name);
+
+    if (!Rdr) {
+        cout << "Error opening file " << name << endl;
+        return;
+    }
+
+    Size = 0;
+    for (int i = 0; i < Capacity; i++) {
+        int tempInput;
+        Rdr >> tempInput; // taking input from file to local variable | '>>' read until space or a linebreak
+        if (tempInput == -1)
+            break;
+        A[Size] = tempInput; Size++;
+    }
+}
+
+void HowPointersWorkWithTextFiles() {
+    int tempArray[100]; int tempArrayCapacity = 100; int tempSize = 0;
+
+    LoadingInput("input.txt", tempArray, tempArrayCapacity, tempSize);
+    ShowArray(tempArray, tempSize);
+
+    SortIntArrayAsc(tempArray, tempSize); // testing ascending sorting function
+    ShowArray(tempArray, tempSize);
+    SortIntArrayDesc(tempArray, tempSize);  // testing descending sorting function
+    ShowArray(tempArray, tempSize);
+    SortIntArray(tempArray, tempSize, true); // testing sorting function with type flag
+    ShowArray(tempArray, tempSize);
+    SortIntArray(tempArray, tempSize, false); // testing sorting function with type flag
+    ShowArray(tempArray, tempSize);
+}
+
 int main() {
     // HowAliasAndReferenceWorks();
 
-    HowArraysAndPointersWork();
+    // HowArraysAndPointersWork();
+
+    HowPointersWorkWithTextFiles();
 }
