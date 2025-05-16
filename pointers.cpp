@@ -1,14 +1,16 @@
 /*
- * This file is to help you revise your
- * C++ concepts regarding pointers
+ * This file is to help with revision of
+ * C++ concepts of pointers
  */
 
 
-#include <iostream>
-using namespace std;
+#include <iostream> // handles input/output streams
+#include <fstream> // library to read from files
+#include <string> // to work with strings
+using namespace std; // this removes the use of 'std::' with cout/cin
 
 // =================================================================================
-//                              Making Alias (Pointers)
+//                              Alias (Pointers)
 // =================================================================================
 void HowAliasAndReferenceWorks() {
     int i = 5; // this is a simple integer
@@ -27,12 +29,12 @@ void HowAliasAndReferenceWorks() {
 }
 
 // =================================================================================
-//                              Arrays & Pointers
+//                              Pointers | Arrays | Functions
 // =================================================================================
 
 // Helping Function
 void ShowArray(int A[], const int size) {
-    cout << "=============================================\n";
+    cout << "\n=============================================\n";
     cout << "Array elements: ";
     for (int i = 0; i < size; i++) {
         cout << A[i] << " ";
