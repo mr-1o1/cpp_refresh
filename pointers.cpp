@@ -79,6 +79,53 @@ void HowArraysAndPointersWork() {
     TakingInput(tempArray, tempArrayCapacity, tempSize);
 }
 
+// =================================================================================
+//                              Pointers | Files
+// =================================================================================
+
+// Helping Function
+void Swap(int &A, int &B) {
+    const int temp = A; A = B; B = temp;
+}
+
+// Helping Function
+void SortIntArrayAsc(int A[], int size) {
+    for (int t = 0; t < size - 1; t++) {
+        for (int i = 0; i < size - 1; i++) {
+            if (A[i] > A[i + 1]) {
+                Swap(A[i], A[i + 1]);
+            }
+        }
+    }
+}
+
+// Helping Function
+void SortIntArrayDesc(int A[], int size) {
+    for (int t = 0; t < size - 1; t++) {
+        for (int i = 0; i < size - 1; i++) {
+            if (A[i] < A[i + 1]) {
+                Swap(A[i], A[i + 1]);
+            }
+        }
+    }
+}
+
+// Helping Function
+void SortIntArray(int A[], const int size, const bool ascending = true) {
+    if (ascending)
+        SortIntArrayAsc(A, size);
+    else
+        SortIntArrayDesc(A, size);
+}
+
+/**
+ * TAKING INPUT FROM A FILE
+ *
+ * @param name : Name of the input text file
+ * @param A : Array given by user (int* A - only the address of first location)
+ * @param Capacity : Max capacity of the array
+ * @param Size : Current size of the array
+ */
 void LoadingInput(string name, int A[], int Capacity, int &Size) {
     ifstream Rdr(name);
 
