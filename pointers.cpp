@@ -7,6 +7,7 @@
 #include <iostream> // handles input/output streams
 #include <fstream> // library to read from files
 #include <string> // to work with strings
+#include "utils/helpers.h"
 using namespace std; // this removes the use of 'std::' with cout/cin
 
 // =================================================================================
@@ -31,15 +32,6 @@ void HowAliasAndReferenceWorks() {
 // =================================================================================
 //                              Pointers | Arrays | Functions
 // =================================================================================
-
-// Helping Function
-void ShowArray(int A[], const int size) {
-    cout << "\n=============================================\n";
-    cout << "Array elements: ";
-    for (int i = 0; i < size; i++) {
-        cout << A[i] << " ";
-    }
-}
 
 /**
  *
@@ -82,42 +74,6 @@ void HowArraysAndPointersWork() {
 // =================================================================================
 //                              Pointers | Files
 // =================================================================================
-
-// Helping Function
-void Swap(int &A, int &B) {
-    const int temp = A; A = B; B = temp;
-}
-
-// Helping Function
-void SortIntArrayAsc(int A[], int size) {
-    for (int t = 0; t < size - 1; t++) {
-        for (int i = 0; i < size - 1; i++) {
-            if (A[i] > A[i + 1]) {
-                Swap(A[i], A[i + 1]);
-            }
-        }
-    }
-}
-
-// Helping Function
-void SortIntArrayDesc(int A[], int size) {
-    for (int t = 0; t < size - 1; t++) {
-        for (int i = 0; i < size - 1; i++) {
-            if (A[i] < A[i + 1]) {
-                Swap(A[i], A[i + 1]);
-            }
-        }
-    }
-}
-
-// Helping Function
-void SortIntArray(int A[], const int size, const bool ascending = true) {
-    if (ascending)
-        SortIntArrayAsc(A, size);
-    else
-        SortIntArrayDesc(A, size);
-}
-
 /**
  * TAKING INPUT FROM A FILE
  *
@@ -150,14 +106,14 @@ void HowPointersWorkWithTextFiles() {
     LoadingInput("input.txt", tempArray, tempArrayCapacity, tempSize);
     ShowArray(tempArray, tempSize);
 
-    SortIntArrayAsc(tempArray, tempSize); // testing ascending sorting function
-    ShowArray(tempArray, tempSize);
-    SortIntArrayDesc(tempArray, tempSize);  // testing descending sorting function
-    ShowArray(tempArray, tempSize);
-    SortIntArray(tempArray, tempSize, true); // testing sorting function with type flag
-    ShowArray(tempArray, tempSize);
-    SortIntArray(tempArray, tempSize, false); // testing sorting function with type flag
-    ShowArray(tempArray, tempSize);
+    // SortIntArrayAsc(tempArray, tempSize); // testing ascending sorting function
+    // ShowArray(tempArray, tempSize);
+    // SortIntArrayDesc(tempArray, tempSize);  // testing descending sorting function
+    // ShowArray(tempArray, tempSize);
+    // SortIntArray(tempArray, tempSize, true); // testing sorting function with type flag
+    // ShowArray(tempArray, tempSize);
+    // SortIntArray(tempArray, tempSize, false); // testing sorting function with type flag
+    // ShowArray(tempArray, tempSize);
 }
 
 int main() {
