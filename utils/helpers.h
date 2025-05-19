@@ -8,6 +8,7 @@
 // void ShowArray(int A[], const int size);
 
 void ShowArray(int*, int);
+void ShowArrayWithMsg(std::string, int*, const int);
 
 // Helping Function
 void Swap(int &A, int &B);
@@ -20,5 +21,7 @@ void SortIntArrayDesc(int A[], int size);
 
 // Helping Function
 void SortIntArray(int A[], const int size, const bool ascending = true);
+
+int* LoadIntDataFromFile(std::string, int &);
 
 #endif //HELPERS_H
