@@ -116,10 +116,106 @@ void HowPointersWorkWithTextFiles() {
     // ShowArray(tempArray, tempSize);
 }
 
+// =================================================================================
+//                              Pointers & References
+// =================================================================================
+void HowPointersAndReferencesWork() {
+    int var = 10;
+    
+    // reference is just another name for the same variable
+    // it is not a new variable, but an alias of the original variable
+    // it is created using '&' symbol
+    // it must be initialized when declared
+    // it cannot be changed to refer to another variable
+    // it cannot be null
+    // it is not a pointer, but it can be used like one
+    int &ref = var; // reference to var | alias of 'var'
+
+    // pointer is a variable that stores the address of another variable
+    // it is created using '*' symbol
+    // it can be initialized to null
+    // it can be changed to point to another variable
+    // it can be dereferenced using '*' symbol
+    // it can be used to access the value of the variable it points to
+    // it can be used to access the address of the variable it points to
+    // it can be used to access the address of the pointer itself
+    int *ptr = &var; // pointer to var
+
+    cout << "Value of var: " << var << endl;
+    cout << "Value of ref: " << ref << endl; // this will output the same value as 'var'
+    cout << "Value of ptr: " << *ptr << endl; // this will output the same value as 'var'
+
+    cout << "-------------------------" << endl;
+
+    cout << "Address of var        : " << &var << endl;
+    cout << "Address of ref        : " << &ref << endl; // this will output the same address as 'var'
+    cout << "Address stored in ptr : " << ptr << endl; // this will output the same address as 'var'
+    cout << "Address of ptr        : " << &ptr << endl; // this will output the address of 'ptr'
+}
+
+// =================================================================================
+//                              Pointers w.r.t. Arrays
+// =================================================================================
+void PointersWithArrays() {
+    int A[5] = {1, 2, 3, 4, 5}; // array of integers
+
+    // pointer to the first element of the array
+    int *ptr = A; // this will point to the first element of the array
+
+    cout << "Address of A  : " << A << endl; // this will output the address of the first element of the array
+    cout << "Address of ptr: " << ptr << endl; // this will output the address of the first element of the array
+
+    cout << "Value of A  : " << *A << endl; // this will output the value of the first element of the array
+    cout << "Value of ptr: " << *ptr << endl; // this will output the value of the first element of the array
+
+    cout << "-------------------------" << endl;
+
+    for (int i = 0; i < 5; i++) {
+        // *(A + i) is same as A[i]
+        cout << *(A + i) << " "; // this will output all elements of the array
+    } cout << endl;
+
+    for (int i = 0; i < 5; i++) {
+        cout << A[i] << " | " << i[A] << endl;
+    } cout << endl;
+}
+
+void CharacterPointersAndArrays() {
+    char C[5] = { 'A', 'B', 'C' };
+
+    // In case of characters, instead of address of first element,
+    // it will start printing until it finds a nullptr, which in
+    // this case is after character 'C'.
+    cout << "C     : " << C << endl; // start printing array from 'A'
+    cout << "C + 1 : " << C + 1 << endl; // start printing array from 'B'
+    cout << "C + 2 : " << C + 2 << endl; // start printing array from 'C'
+    cout << "C + 3 : " << C + 3 << endl; // start printing array from nullptr, so it will show nothign
+
+    // But how to display the address of a character?
+    // Following is a method to display address of a character
+
+    // Just add (void*) with the character.
+    // It essentially tells the compiler to treat the following variable as a pointer.
+    // Here is some examples,
+    cout << "Address of C     : " << (void*) C << endl; // start printing array from 'A'
+    cout << "Address of C + 1 : " << (void*) (C + 1) << endl; // start printing array from 'B'
+    cout << "Address of C + 2 : " << (void*) (C + 2) << endl; // start printing array from 'C'
+    cout << "Address of C + 3 : " << (void*) (C + 3) << endl; // start printing array from nullptr, so it will show nothign
+}
+
+
+// =================================================================================
+// =================================================================================
+// =================================================================================
+//                                  Main Function
+// =================================================================================
+// =================================================================================
+// =================================================================================
 int main() {
     // HowAliasAndReferenceWorks();
-
     // HowArraysAndPointersWork();
-
-    HowPointersWorkWithTextFiles();
+    // HowPointersWorkWithTextFiles();
+    // HowPointersAndReferencesWork();
+    // PointersWithArrays();
+    CharacterPointersAndArrays();
 }
