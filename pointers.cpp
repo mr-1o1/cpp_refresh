@@ -203,6 +203,39 @@ void CharacterPointersAndArrays() {
     cout << "Address of C + 3 : " << (void*) (C + 3) << endl; // start printing array from nullptr, so it will show nothign
 }
 
+// =================================================================================
+//                              Pointers & RUN-TIMEs
+// =================================================================================
+void HowToWorkWithPointerArraysAtRuntime() {
+    /**
+     * One of the biggest flaw of working with arrays (primitive ways) is
+     * we cannot initialize the array at runtime. Or cannot modify it's size.
+     * 
+     * This problem is solved using pointers. Below is a method.
+     * 
+     * For the context, a little background on how C++ loads data in the RAM. So basically
+     * it creates four segments in the RAM,
+     * 1. Code Segment
+     * 2. Global/Static Segment
+     * 3. Heap Segment  --> (for RUNTIME memories, accessed with `new` keyword)
+     * 4. Stack Segment --> For general variables (int, char, arrays) | Compile Time Memory
+     */
+
+    // Following operation is forbidden in C++
+
+    // int size;
+    // cin >> size;
+    // int arr[size]; // this will give syntax error | requires a constant size
+    
+    // const int size2 = 4;
+    // int arr[size2]; // this will work
+
+    int size;
+    int *arr = LoadIntDataFromFile("data/input_size.txt", size);
+
+    ShowArrayWithMsg("Main: ", arr, size);
+}
+
 
 // =================================================================================
 // =================================================================================
@@ -217,5 +250,9 @@ int main() {
     // HowPointersWorkWithTextFiles();
     // HowPointersAndReferencesWork();
     // PointersWithArrays();
-    CharacterPointersAndArrays();
+    // CharacterPointersAndArrays();
+
+    HowToWorkWithPointerArraysAtRuntime();
+
+    return 0;
 }
