@@ -62,3 +62,7 @@ secrets/
 credentials/
 config.yaml
 config.json
+
+# File Names
+pointers
+*.*.dSYM/** 
