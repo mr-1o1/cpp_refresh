@@ -103,7 +103,7 @@ void LoadingInput(string name, int A[], int Capacity, int &Size) {
 void HowPointersWorkWithTextFiles() {
     int tempArray[100]; int tempArrayCapacity = 100; int tempSize = 0;
 
-    LoadingInput("input.txt", tempArray, tempArrayCapacity, tempSize);
+    LoadingInput("data/input.txt", tempArray, tempArrayCapacity, tempSize);
     ShowArray(tempArray, tempSize);
 
     // SortIntArrayAsc(tempArray, tempSize); // testing ascending sorting function
@@ -247,12 +247,12 @@ void HowToWorkWithPointerArraysAtRuntime() {
 int main() {
     // HowAliasAndReferenceWorks();
     // HowArraysAndPointersWork();
-    // HowPointersWorkWithTextFiles();
+    HowPointersWorkWithTextFiles();
     // HowPointersAndReferencesWork();
     // PointersWithArrays();
     // CharacterPointersAndArrays();
 
-    HowToWorkWithPointerArraysAtRuntime();
+    // HowToWorkWithPointerArraysAtRuntime();
 
     return 0;
 }

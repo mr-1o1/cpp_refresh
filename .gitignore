@@ -64,4 +64,4 @@ config.yaml
 config.json
 
 # File Names
-*.*.dSYM/** 
+**/*.*.dSYM/** 
