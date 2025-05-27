@@ -7,9 +7,11 @@ class MyTime {
     unsigned int sec;
 
 public:
-    MyTime();
-    MyTime(int, int, int);
+    MyTime(int = 0, int = 0, int = 0);
     void setTime(int, int, int);
+    void setHour(int);
+    void setMinute(int);
+    void setSecond(int);
     void printUniversal() const;
     void printStandard() const;
 };
