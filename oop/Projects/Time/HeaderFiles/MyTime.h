@@ -7,7 +7,10 @@ class MyTime {
     unsigned int sec;
 
 public:
-    MyTime(int = 0, int = 0, int = 0);
+    MyTime();
+    MyTime(int);
+    MyTime(int, int);
+    MyTime(int, int, int);
     void setTime(int, int, int);
     void setHour(int);
     void setMinute(int);

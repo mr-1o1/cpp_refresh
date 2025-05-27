@@ -2,6 +2,17 @@
 #include "MyTime.h"
 using namespace std;
 
+MyTime::MyTime() {
+    MyTime(0, 0, 0);
+}
+
+MyTime::MyTime(int h) {
+    MyTime(h, 0, 0);
+}
+
+MyTime::MyTime(int h, int m) {
+    MyTime(h, m, 0);
+}
 
 MyTime::MyTime(int h, int m, int s) {
     try
@@ -12,8 +23,6 @@ MyTime::MyTime(int h, int m, int s) {
     {
         cerr << "Exception: " << e.what() << '\n';
     }
-    
-
 }
 
 // 
